@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src= "angular.js"></script>
+</head>
+<body background="image.jpg">
+<h2 align="center" style="color:white">Registration</h2>
+<form ng-app="" ng-controller="register" name="myForm">
+<br>
+<br>
+<br>
+<br>
+<p align="center" style="color:white" style="font-size:30px">Firstname:&nbsp&nbsp  &nbsp  &nbsp  &nbsp     
+<input type="text" name="firstname" ng-model="firstname" required>
+<span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.firstname.$error.required">Firstname is required.</span>
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">Lastname:&nbsp  &nbsp  &nbsp  &nbsp  &nbsp      
+<input type="text" name="lastname" ng-model="lastname" required>
+<span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.lastname.$error.required">Lastname is required.</span>
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">Address Line 1:  
+<input name="addressline1" ng-model="addressline1" required>
+<span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.addressline1.$error.required">Address line 1 is required.</span>
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">Address Line 2:  
+<input name="addressline2" ng-model="addressline2" required>
+<span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.addressline2.$error.required">Address line 2 is required.</span>
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">Address Line 3:  
+<input type="text" name="addressline3" ng-model="addressline3" required>
+<span style="color:white" ng-show="myForm.addressline3.$dirty && myForm.user.$invalid">
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">State:&nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp    
+<input type="text" name="state" ng-model="state" required>
+<span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.state.$error.required">State is required.</span>
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">Email:&nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp    
+<input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span>
+</p>
+
+<p align="center" style="color:white" style="font-size:30px">State:&nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp   
+<input type="text" name="mobile" ng-model="mobile" required>
+<span style="color:white" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.mobile.$error.required">Mobile number is required.</span>
+</span>
+</p>
+
+<br>
+<br>
+
+<p align="center">
+<button ng-click="submit()" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid">SUBMIT</button> 
+</p>
+</form>
+<script>
+function register($scope) {
+    $scope.firstname = '';
+    $scope.lastname = '';
+    $scope.addressline1 = '';
+    $scope.addressline2 = '';
+    $scope.addressline3 = '';
+    $scope.state = '';
+    $scope.email = '';
+    $scope.mobile = '';
+}
+$scope.submit();
+</script>
+</body>
+</html>
